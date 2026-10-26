@@ -3049,11 +3049,6 @@ textarea.form-control {
     gap: 0.5rem;
   }
 
-  .nav-admin-link {
-    padding: 6px 10px !important;
-    font-size: 12px !important;
-  }
-
   .nav-cta-btn {
     padding: 0.5rem 0.9rem;
     font-size: 0.82rem;
@@ -3189,10 +3184,6 @@ textarea.form-control {
 }
 
 @media (max-width: 400px) {
-  .nav-admin-link span {
-    display: none;
-  }
-
   .nav-cta-btn span {
     display: none;
   }
