@@ -35,14 +35,27 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
   }
 
-  // Mobile menu toggle
+  // Mobile menu toggle & backdrop
   const mobileToggle = document.getElementById('mobileMenuToggle');
   const sidebar = document.getElementById('adminSidebar');
-  if (mobileToggle && sidebar) {
-    mobileToggle.addEventListener('click', () => {
-      sidebar.classList.toggle('open');
-    });
-  }
+  const sidebarClose = document.getElementById('sidebarCloseBtn');
+  const sidebarBackdrop = document.getElementById('sidebarBackdrop');
+
+  const openSidebar = () => {
+    if (sidebar) sidebar.classList.add('open');
+    if (sidebarBackdrop) sidebarBackdrop.classList.add('visible');
+    document.body.style.overflow = 'hidden';
+  };
+
+  const closeSidebar = () => {
+    if (sidebar) sidebar.classList.remove('open');
+    if (sidebarBackdrop) sidebarBackdrop.classList.remove('visible');
+    document.body.style.overflow = '';
+  };
+
+  if (mobileToggle) mobileToggle.addEventListener('click', openSidebar);
+  if (sidebarClose) sidebarClose.addEventListener('click', closeSidebar);
+  if (sidebarBackdrop) sidebarBackdrop.addEventListener('click', closeSidebar);
 
   // =========================================================================
   // 2. TOAST NOTIFICATIONS
@@ -98,7 +111,7 @@ document.addEventListener('DOMContentLoaded', async () => {
       }
 
       // Close mobile sidebar on selection
-      if (sidebar) sidebar.classList.remove('open');
+      closeSidebar();
     });
   });
 
