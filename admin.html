@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | Mizpah Ministries</title>
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231E5AA8'><path d='M11 2h2v7h7v2h-7v11h-2V11H4V9h7V2z'/></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+  <!-- Admin Stylesheet -->
+  <link rel="stylesheet" href="admin.css">
+</head>
+
+<body>
+
+  <div class="admin-layout">
+
+    <!-- SIDEBAR -->
+    <aside class="admin-sidebar" id="adminSidebar">
+      <div class="sidebar-header">
+        <div class="sidebar-logo-icon">
+          <svg viewBox="0 0 36 36" style="width: 24px; height: 24px;" aria-hidden="true">
+            <path d="M17 5h2v9h8v2h-8v15h-2V16H9v-2h8V5z" fill="#D4AF37" />
+          </svg>
+        </div>
+        <div class="sidebar-brand-text">
+          <h2>Mizpah Ministries</h2>
+          <span>Admin Portal</span>
+        </div>
+      </div>
+
+      <nav class="sidebar-nav">
+        <div class="nav-section-title">COMMUNICATION</div>
+        <button class="sidebar-nav-btn active" data-tab="inquiries">
+          <div class="btn-left-wrap">
+            <i class="fa-solid fa-inbox"></i>
+            <span>Contact Inquiries</span>
+          </div>
+          <span class="nav-badge" id="unreadBadge" style="display: none;">0</span>
+        </button>
+
+        <div class="nav-section-title">SECTIONS CRUD</div>
+        <button class="sidebar-nav-btn" data-tab="hero">
+          <div class="btn-left-wrap">
+            <i class="fa-solid fa-image"></i>
+            <span>Hero Section</span>
+          </div>
+        </button>
+
+        <button class="sidebar-nav-btn" data-tab="pathway">
+          <div class="btn-left-wrap">
+            <i class="fa-solid fa-compass"></i>
+            <span>Pathway Cards</span>
+          </div>
+        </button>
+
+        <button class="sidebar-nav-btn" data-tab="pastor">
+          <div class="btn-left-wrap">
+            <i class="fa-solid fa-user-tie"></i>
+            <span>Our Pastor</span>
+          </div>
+        </button>
+
+        <button class="sidebar-nav-btn" data-tab="sermons">
+          <div class="btn-left-wrap">
+            <i class="fa-solid fa-book-bible"></i>
+            <span>Sermons</span>
+          </div>
+        </button>
+
+        <button class="sidebar-nav-btn" data-tab="gallery">
+          <div class="btn-left-wrap">
+            <i class="fa-solid fa-photo-film"></i>
+            <span>Photo Gallery</span>
+          </div>
+        </button>
+
+        <button class="sidebar-nav-btn" data-tab="testimonials">
+          <div class="btn-left-wrap">
+            <i class="fa-solid fa-quote-left"></i>
+            <span>Testimonials</span>
+          </div>
+        </button>
+
+        <div class="nav-section-title">GENERAL</div>
+        <button class="sidebar-nav-btn" data-tab="settings">
+          <div class="btn-left-wrap">
+            <i class="fa-solid fa-church"></i>
+            <span>Church Info &amp; Settings</span>
+          </div>
+        </button>
+      </nav>
+
+      <div class="sidebar-footer">
+        <div class="admin-user-info">
+          <div class="admin-avatar" id="adminAvatarLetter">A</div>
+          <div class="admin-user-text">
+            <div class="admin-name" id="adminUserEmail">admin@mizpah...</div>
+            <div class="admin-role">Pastor / Admin</div>
+          </div>
+        </div>
+        <button class="logout-btn" id="logoutBtn" title="Sign Out">
+          <i class="fa-solid fa-arrow-right-from-bracket"></i>
+        </button>
+      </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="admin-main">
+
+      <!-- TOPBAR -->
+      <header class="admin-topbar">
+        <div class="topbar-left">
+          <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle menu">
+            <i class="fa-solid fa-bars"></i>
+          </button>
+          <h1 class="page-heading" id="topbarTitle">Contact Inquiries</h1>
+        </div>
+
+        <div class="topbar-right">
+          <div class="sync-status" id="syncStatus">
+            <div class="sync-dot"></div>
+            <span>Connected to Supabase</span>
+          </div>
+          <a href="index.html" target="_blank" class="visit-site-link">
+            <span>View Website</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+        </div>
+      </header>
+
+      <!-- CONTENT PANES -->
+      <div class="admin-content">
+
+        <!-- ================================================================
+             TAB 1: CONTACT INQUIRIES
+             ================================================================ -->
+        <section class="tab-pane active" id="pane-inquiries">
+          <div class="content-card">
+            <div class="card-header-flex">
+              <div class="card-title-group">
+                <h3><i class="fa-solid fa-envelope-open-text"></i> Messages from Website Form</h3>
+                <p>New inquiries filled out on the main page reflect here automatically in real time.</p>
+              </div>
+              <div class="card-actions">
+                <button class="btn-secondary-admin" id="refreshInquiriesBtn">
+                  <i class="fa-solid fa-rotate-right"></i>
+                  <span>Refresh</span>
+                </button>
+              </div>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table" id="inquiriesTable">
+                <thead>
+                  <tr>
+                    <th>Status</th>
+                    <th>Date Received</th>
+                    <th>Full Name</th>
+                    <th>Email Address</th>
+                    <th>Phone</th>
+                    <th>Subject</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="inquiriesTableBody">
+                  <tr>
+                    <td colspan="7" style="text-align: center; padding: 30px; color: var(--text-dim);">
+                      <i class="fa-solid fa-spinner fa-spin"></i> Loading messages...
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 2: HERO SECTION CRUD
+             ================================================================ -->
+        <section class="tab-pane" id="pane-hero">
+          <div class="content-card">
+            <div class="card-header-flex">
+              <div class="card-title-group">
+                <h3><i class="fa-solid fa-image"></i> Hero Section Customization</h3>
+                <p>Modify the primary welcome banner, headline text, buttons, and background imagery.</p>
+              </div>
+              <button class="btn-primary-admin" id="saveHeroBtn">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span>Save Hero Changes</span>
+              </button>
+            </div>
+
+            <form id="heroForm">
+              <div class="form-grid-2">
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Hero Eyebrow / Subtitle</label>
+                  <input type="text" id="heroSubtitle" class="form-control-admin" placeholder="A PLACE OF FAITH, HOPE & COMMUNITY">
+                </div>
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Hero Main Headline</label>
+                  <input type="text" id="heroTitle" class="form-control-admin" placeholder="Welcome to Mizpah Ministries">
+                </div>
+              </div>
+
+              <div class="form-group-admin">
+                <label class="form-label-admin">Hero Description Paragraph</label>
+                <textarea id="heroDesc" class="form-control-admin" rows="3" placeholder="Join us this Sunday as we gather in worship..."></textarea>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Primary CTA Button Text</label>
+                  <input type="text" id="heroBtn1Text" class="form-control-admin" placeholder="Plan Your Visit">
+                </div>
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Primary CTA Button Link</label>
+                  <input type="text" id="heroBtn1Link" class="form-control-admin" placeholder="#contact">
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Secondary CTA Button Text</label>
+                  <input type="text" id="heroBtn2Text" class="form-control-admin" placeholder="Watch Sermons">
+                </div>
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Secondary CTA Button Link</label>
+                  <input type="text" id="heroBtn2Link" class="form-control-admin" placeholder="#sermons">
+                </div>
+              </div>
+
+              <!-- Hero Background Image Upload -->
+              <div class="form-group-admin">
+                <label class="form-label-admin">Hero Background Image</label>
+                <div class="image-upload-widget">
+                  <img id="heroImagePreview" src="images/hero-church.jpg" alt="Hero background" class="image-preview-thumb">
+                  <div class="upload-action-col">
+                    <input type="text" id="heroImageUrl" class="form-control-admin" placeholder="https://... or images/hero-church.jpg" style="margin-bottom: 10px;">
+                    <label class="btn-upload-file">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <span>Upload New Image to Supabase</span>
+                      <input type="file" id="heroImageFileInput" class="file-input-hidden" accept="image/*">
+                    </label>
+                    <div class="upload-hint">Uploads directly to your Supabase <code>church-media</code> storage bucket.</div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 3: PATHWAY CARDS CRUD
+             ================================================================ -->
+        <section class="tab-pane" id="pane-pathway">
+          <div class="content-card">
+            <div class="card-header-flex">
+              <div class="card-title-group">
+                <h3><i class="fa-solid fa-compass"></i> Pathway Cards (Know God, Find Community, Make a Difference)</h3>
+                <p>Manage the three prominent mission cards under the hero section.</p>
+              </div>
+              <button class="btn-primary-admin" id="addPathwayCardBtn">
+                <i class="fa-solid fa-plus"></i>
+                <span>Add Pathway Card</span>
+              </button>
+            </div>
+
+            <div class="cards-admin-grid" id="pathwayCardsGrid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 4: OUR PASTOR CRUD
+             ================================================================ -->
+        <section class="tab-pane" id="pane-pastor">
+          <div class="content-card">
+            <div class="card-header-flex">
+              <div class="card-title-group">
+                <h3><i class="fa-solid fa-user-tie"></i> Our Pastor Section</h3>
+                <p>Update pastor details, eyebrow, quotes, and photo.</p>
+              </div>
+              <button class="btn-primary-admin" id="savePastorBtn">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span>Save Pastor Details</span>
+              </button>
+            </div>
+
+            <form id="pastorForm">
+              <div class="form-grid-2">
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Eyebrow Label</label>
+                  <input type="text" id="pastorEyebrow" class="form-control-admin" placeholder="MEET OUR PASTOR">
+                </div>
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Pastor Name</label>
+                  <input type="text" id="pastorName" class="form-control-admin" placeholder="Dr. Ronald E. Williams">
+                </div>
+              </div>
+
+              <div class="form-group-admin">
+                <label class="form-label-admin">Pastor's Heart / Bio Quote</label>
+                <textarea id="pastorQuote" class="form-control-admin" rows="4" placeholder="“Our mission is simple: to make disciples who passionately know God..."></textarea>
+              </div>
+
+              <!-- Pastor Photo Upload -->
+              <div class="form-group-admin">
+                <label class="form-label-admin">Pastor Photograph</label>
+                <div class="image-upload-widget">
+                  <img id="pastorImagePreview" src="images/pastor.png" alt="Pastor" class="image-preview-thumb image-preview-circle">
+                  <div class="upload-action-col">
+                    <input type="text" id="pastorImageUrl" class="form-control-admin" placeholder="images/pastor.png" style="margin-bottom: 10px;">
+                    <label class="btn-upload-file">
+                      <i class="fa-solid fa-cloud-arrow-up"></i>
+                      <span>Upload New Pastor Photo</span>
+                      <input type="file" id="pastorImageFileInput" class="file-input-hidden" accept="image/*">
+                    </label>
+                    <div class="upload-hint">Uploads directly to Supabase storage.</div>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 5: SERMONS CRUD
+             ================================================================ -->
+        <section class="tab-pane" id="pane-sermons">
+          <div class="content-card">
+            <div class="card-header-flex">
+              <div class="card-title-group">
+                <h3><i class="fa-solid fa-book-bible"></i> Sermons Archive</h3>
+                <p>Manage featured messages and the sermon catalog.</p>
+              </div>
+              <button class="btn-primary-admin" id="addSermonBtn">
+                <i class="fa-solid fa-plus"></i>
+                <span>Add New Sermon</span>
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="data-table">
+                <thead>
+                  <tr>
+                    <th>Series</th>
+                    <th>Title</th>
+                    <th>Preacher</th>
+                    <th>Date</th>
+                    <th>Scripture</th>
+                    <th>Featured</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="sermonsTableBody">
+                  <!-- Dynamically loaded -->
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 6: GALLERY CRUD
+             ================================================================ -->
+        <section class="tab-pane" id="pane-gallery">
+          <div class="content-card">
+            <div class="card-header-flex">
+              <div class="card-title-group">
+                <h3><i class="fa-solid fa-photo-film"></i> Photo Gallery Management</h3>
+                <p>Upload and organize photos into Worship, Community, Sanctuary, and Events.</p>
+              </div>
+              <button class="btn-primary-admin" id="addGalleryBtn">
+                <i class="fa-solid fa-plus"></i>
+                <span>Upload New Photo</span>
+              </button>
+            </div>
+
+            <div class="cards-admin-grid" id="galleryGrid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 7: TESTIMONIALS CRUD
+             ================================================================ -->
+        <section class="tab-pane" id="pane-testimonials">
+          <div class="content-card">
+            <div class="card-header-flex">
+              <div class="card-title-group">
+                <h3><i class="fa-solid fa-quote-left"></i> Member Testimonies</h3>
+                <p>Manage stories of faith shared by the congregation.</p>
+              </div>
+              <button class="btn-primary-admin" id="addTestimonialBtn">
+                <i class="fa-solid fa-plus"></i>
+                <span>Add Testimonial</span>
+              </button>
+            </div>
+
+            <div class="cards-admin-grid" id="testimonialsGrid">
+              <!-- Dynamically populated -->
+            </div>
+          </div>
+        </section>
+
+        <!-- ================================================================
+             TAB 8: CHURCH SETTINGS
+             ================================================================ -->
+        <section class="tab-pane" id="pane-settings">
+          <div class="content-card">
+            <div class="card-header-flex">
+              <div class="card-title-group">
+                <h3><i class="fa-solid fa-church"></i> Church Information &amp; Footer</h3>
+                <p>Manage address, phone, email, service hours, and social media handles.</p>
+              </div>
+              <button class="btn-primary-admin" id="saveSettingsBtn">
+                <i class="fa-solid fa-floppy-disk"></i>
+                <span>Save Settings</span>
+              </button>
+            </div>
+
+            <form id="settingsForm">
+              <div class="form-grid-3">
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Church Name</label>
+                  <input type="text" id="settingChurchName" class="form-control-admin" placeholder="Mizpah Ministries">
+                </div>
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Contact Phone</label>
+                  <input type="text" id="settingPhone" class="form-control-admin" placeholder="(800) 555-4321">
+                </div>
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Contact Email</label>
+                  <input type="email" id="settingEmail" class="form-control-admin" placeholder="hello@gracehavenchurch.org">
+                </div>
+              </div>
+
+              <div class="form-grid-2">
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Physical Address</label>
+                  <textarea id="settingAddress" class="form-control-admin" rows="2" placeholder="742 Evergreen Terrace, Springfield, IL 62704"></textarea>
+                </div>
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Sunday &amp; Weekly Service Times</label>
+                  <textarea id="settingServiceTimes" class="form-control-admin" rows="2" placeholder="Sunday: 9:00 AM & 11:00 AM | Wednesday: 7:00 PM"></textarea>
+                </div>
+              </div>
+
+              <h4 style="margin: 20px 0 14px; font-size: 15px; color: var(--accent-gold);">Social Links</h4>
+              <div class="form-grid-2">
+                <div class="form-group-admin">
+                  <label class="form-label-admin">Facebook URL</label>
+                  <input type="url" id="settingFacebook" class="form-control-admin" placeholder="https://facebook.com/mizpah">
+                </div>
+                <div class="form-group-admin">
+                  <label class="form-label-admin">YouTube URL</label>
+                  <input type="url" id="settingYoutube" class="form-control-admin" placeholder="https://youtube.com/@mizpah">
+                </div>
+              </div>
+            </form>
+          </div>
+        </section>
+
+      </div>
+    </main>
+
+  </div>
+
+  <!-- =========================================================================
+       MODALS
+       ========================================================================= -->
+
+  <!-- Modal 1: View Contact Submission Details -->
+  <div class="modal-backdrop-admin" id="inquiryDetailModal">
+    <div class="modal-dialog-admin">
+      <div class="modal-header-admin">
+        <h3>Contact Submission Details</h3>
+        <button class="modal-close-btn" data-close-modal="inquiryDetailModal">&times;</button>
+      </div>
+      <div class="modal-body-admin">
+        <div class="detail-item-stack">
+          <div class="detail-row">
+            <span class="detail-label">Received At</span>
+            <span class="detail-value" id="modalInquiryDate"></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Sender Name</span>
+            <span class="detail-value" id="modalInquiryName" style="font-weight: 700;"></span>
+          </div>
+          <div class="form-grid-2">
+            <div class="detail-row">
+              <span class="detail-label">Email</span>
+              <span class="detail-value" id="modalInquiryEmail"></span>
+            </div>
+            <div class="detail-row">
+              <span class="detail-label">Phone</span>
+              <span class="detail-value" id="modalInquiryPhone"></span>
+            </div>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Subject / Purpose</span>
+            <span class="detail-value" id="modalInquirySubject"></span>
+          </div>
+          <div class="detail-row">
+            <span class="detail-label">Message Content</span>
+            <div class="detail-message-box" id="modalInquiryMessage"></div>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer-admin">
+        <button class="btn-secondary-admin" data-close-modal="inquiryDetailModal">Close</button>
+        <a id="modalReplyBtn" href="#" class="btn-primary-admin" target="_blank">
+          <i class="fa-solid fa-reply"></i>
+          <span>Reply via Email</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Pathway Card Add/Edit Modal -->
+  <div class="modal-backdrop-admin" id="pathwayModal">
+    <div class="modal-dialog-admin">
+      <div class="modal-header-admin">
+        <h3 id="pathwayModalTitle">Add Pathway Card</h3>
+        <button class="modal-close-btn" data-close-modal="pathwayModal">&times;</button>
+      </div>
+      <div class="modal-body-admin">
+        <form id="pathwayCardForm">
+          <input type="hidden" id="pathwayCardId">
+          <div class="form-group-admin">
+            <label class="form-label-admin">Card Title *</label>
+            <input type="text" id="pathwayTitle" class="form-control-admin" placeholder="Know God" required>
+          </div>
+          <div class="form-group-admin">
+            <label class="form-label-admin">Description *</label>
+            <textarea id="pathwayDesc" class="form-control-admin" rows="3" placeholder="Experience God's love through uplifting worship..." required></textarea>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Button / Target Link</label>
+              <input type="text" id="pathwayLink" class="form-control-admin" placeholder="#contact">
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Sort Order</label>
+              <input type="number" id="pathwaySortOrder" class="form-control-admin" value="1">
+            </div>
+          </div>
+          <div class="form-group-admin">
+            <label class="form-label-admin">Card Image</label>
+            <div class="image-upload-widget">
+              <img id="pathwayPreviewThumb" src="images/know-god.jpg" class="image-preview-thumb" alt="Preview">
+              <div class="upload-action-col">
+                <input type="text" id="pathwayImageUrl" class="form-control-admin" placeholder="images/know-god.jpg" style="margin-bottom: 8px;">
+                <label class="btn-upload-file">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <span>Upload Image</span>
+                  <input type="file" id="pathwayFileInput" class="file-input-hidden" accept="image/*">
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer-admin">
+        <button class="btn-secondary-admin" data-close-modal="pathwayModal">Cancel</button>
+        <button class="btn-primary-admin" id="savePathwaySubmitBtn">Save Card</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Sermon Add/Edit Modal -->
+  <div class="modal-backdrop-admin" id="sermonModal">
+    <div class="modal-dialog-admin">
+      <div class="modal-header-admin">
+        <h3 id="sermonModalTitle">Add New Sermon</h3>
+        <button class="modal-close-btn" data-close-modal="sermonModal">&times;</button>
+      </div>
+      <div class="modal-body-admin">
+        <form id="sermonForm">
+          <input type="hidden" id="sermonId">
+          <div class="form-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Series Name</label>
+              <input type="text" id="sermonSeries" class="form-control-admin" placeholder="Walking in Grace" required>
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Sermon Title *</label>
+              <input type="text" id="sermonTitle" class="form-control-admin" placeholder="Grace Greater Than Our Circumstance" required>
+            </div>
+          </div>
+          <div class="form-grid-3">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Preacher</label>
+              <input type="text" id="sermonPreacher" class="form-control-admin" placeholder="Dr. Ronald E. Williams">
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Date</label>
+              <input type="date" id="sermonDate" class="form-control-admin">
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Scripture</label>
+              <input type="text" id="sermonScripture" class="form-control-admin" placeholder="Romans 8:28-39">
+            </div>
+          </div>
+          <div class="form-group-admin">
+            <label class="form-label-admin">Description / Notes</label>
+            <textarea id="sermonDesc" class="form-control-admin" rows="2" placeholder="Discover the unshakable foundation of God's covenant..."></textarea>
+          </div>
+          <div class="form-group-admin">
+            <label class="form-label-admin">Video / Audio Stream URL</label>
+            <input type="url" id="sermonVideoUrl" class="form-control-admin" placeholder="https://www.youtube.com/watch?v=...">
+          </div>
+          <div class="form-group-admin">
+            <label class="form-label-admin">Thumbnail Image URL</label>
+            <input type="text" id="sermonThumbUrl" class="form-control-admin" placeholder="https://images.unsplash.com/photo-...">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer-admin">
+        <button class="btn-secondary-admin" data-close-modal="sermonModal">Cancel</button>
+        <button class="btn-primary-admin" id="saveSermonSubmitBtn">Save Sermon</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Gallery Upload Modal -->
+  <div class="modal-backdrop-admin" id="galleryModal">
+    <div class="modal-dialog-admin">
+      <div class="modal-header-admin">
+        <h3>Add Photo to Gallery</h3>
+        <button class="modal-close-btn" data-close-modal="galleryModal">&times;</button>
+      </div>
+      <div class="modal-body-admin">
+        <form id="galleryForm">
+          <div class="form-group-admin">
+            <label class="form-label-admin">Photo Caption / Title *</label>
+            <input type="text" id="galleryTitle" class="form-control-admin" placeholder="Sunday Morning Praise" required>
+          </div>
+          <div class="form-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Category</label>
+              <select id="galleryCategory" class="form-control-admin">
+                <option value="worship">Worship</option>
+                <option value="community">Community</option>
+                <option value="events">Events</option>
+                <option value="building">Sanctuary / Building</option>
+              </select>
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Sort Order</label>
+              <input type="number" id="gallerySortOrder" class="form-control-admin" value="1">
+            </div>
+          </div>
+          <div class="form-group-admin">
+            <label class="form-label-admin">Photo Image *</label>
+            <div class="image-upload-widget">
+              <img id="galleryPreviewThumb" src="https://images.unsplash.com/photo-1519491050282-cf00c82424b4?auto=format&fit=crop&w=800&q=80" class="image-preview-thumb" alt="Preview">
+              <div class="upload-action-col">
+                <input type="text" id="galleryImageUrl" class="form-control-admin" placeholder="Image URL or upload below" style="margin-bottom: 8px;">
+                <label class="btn-upload-file">
+                  <i class="fa-solid fa-cloud-arrow-up"></i>
+                  <span>Upload Photo</span>
+                  <input type="file" id="galleryFileInput" class="file-input-hidden" accept="image/*">
+                </label>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer-admin">
+        <button class="btn-secondary-admin" data-close-modal="galleryModal">Cancel</button>
+        <button class="btn-primary-admin" id="saveGallerySubmitBtn">Add to Gallery</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Testimonial Add/Edit Modal -->
+  <div class="modal-backdrop-admin" id="testimonialModal">
+    <div class="modal-dialog-admin">
+      <div class="modal-header-admin">
+        <h3 id="testimonialModalTitle">Add Testimonial</h3>
+        <button class="modal-close-btn" data-close-modal="testimonialModal">&times;</button>
+      </div>
+      <div class="modal-body-admin">
+        <form id="testimonialForm">
+          <input type="hidden" id="testimonialId">
+          <div class="form-grid-2">
+            <div class="form-group-admin">
+              <label class="form-label-admin">Member Name *</label>
+              <input type="text" id="testimonialAuthor" class="form-control-admin" placeholder="Sarah Jenkins" required>
+            </div>
+            <div class="form-group-admin">
+              <label class="form-label-admin">Subtitle / Role</label>
+              <input type="text" id="testimonialRole" class="form-control-admin" placeholder="Member for 3 Years">
+            </div>
+          </div>
+          <div class="form-group-admin">
+            <label class="form-label-admin">Testimony Quote *</label>
+            <textarea id="testimonialQuote" class="form-control-admin" rows="4" placeholder="“From the moment we walked through the doors...”" required></textarea>
+          </div>
+          <div class="form-group-admin">
+            <label class="form-label-admin">Member Avatar URL</label>
+            <input type="text" id="testimonialAvatarUrl" class="form-control-admin" placeholder="https://images.unsplash.com/photo-...">
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer-admin">
+        <button class="btn-secondary-admin" data-close-modal="testimonialModal">Cancel</button>
+        <button class="btn-primary-admin" id="saveTestimonialSubmitBtn">Save Testimonial</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Container -->
+  <div class="toast-container-admin" id="adminToastContainer"></div>
+
+  <!-- Supabase JS Client & API Client -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+  <script src="admin.js"></script>
+</body>
+
+</html>

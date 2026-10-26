@@ -1,0 +1,1042 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mizpah Ministries | A Place of Faith, Hope & Love</title>
+  <meta name="description"
+    content="Welcome to Grace Haven Church. Come as you are. Grow in faith. Walk with Christ. Join our Sunday worship services and community ministries.">
+
+  <!-- Favicon / SVG Cross Icon -->
+  <link rel="icon" type="image/svg+xml"
+    href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%231E5AA8'><path d='M11 2h2v7h7v2h-7v11h-2V11H4V9h7V2z'/></svg>">
+
+  <!-- Google Fonts: Playfair Display, Cinzel, & Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700;800&family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <!-- Font Awesome 6 Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+    integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <!-- Main Stylesheet -->
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+  <!-- SECTION 1: Header / Sticky Navigation -->
+  <header class="site-header" id="header">
+    <div class="container header-container">
+      <!-- Church Logo / Cross Icon -->
+      <a href="#home" class="church-logo" aria-label="Mizpah Ministries Home">
+        <div class="logo-symbol">
+          <svg viewBox="0 0 40 40" class="cross-svg" aria-hidden="true">
+            <defs>
+              <linearGradient id="crossGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stop-color="#1E5AA8" />
+                <stop offset="100%" stop-color="#0B2A4A" />
+              </linearGradient>
+            </defs>
+            <circle cx="20" cy="20" r="18" fill="#EAF4FF" stroke="#1E5AA8" stroke-width="1.5" stroke-dasharray="2 2" />
+            <!-- Cross -->
+            <path d="M19 8h2v9h8v2h-8v13h-2V19h-8v-2h8V8z" fill="url(#crossGrad)" />
+            <!-- Soft radiance aura -->
+            <circle cx="20" cy="18" r="5" fill="#1E5AA8" opacity="0.15" />
+          </svg>
+        </div>
+        <div class="logo-text">
+          <span class="church-title">Mizpah Ministries</span>
+          <span class="church-subtitle">CHURCH & COMMUNITY</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation Links -->
+      <nav class="main-nav" id="mainNav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li class="nav-item"><a href="#home" class="nav-link active">Home</a></li>
+          <li class="nav-item"><a href="#pastor" class="nav-link">Pastor</a></li>
+          <li class="nav-item"><a href="#sermons" class="nav-link">Sermons</a></li>
+          <li class="nav-item"><a href="#gallery" class="nav-link">Gallery</a></li>
+          <li class="nav-item"><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Action Button & Mobile Hamburger -->
+      <div class="header-actions">
+        <a href="login.html" class="nav-admin-link" title="Staff Admin Portal" style="display: inline-flex; align-items: center; gap: 6px; padding: 7px 12px; font-size: 13px; font-weight: 600; color: #1E5AA8; background: #EAF4FF; border-radius: 8px; text-decoration: none; border: 1px solid rgba(30,90,168,0.2);">
+          <i class="fa-solid fa-lock"></i>
+          <span>Admin</span>
+        </a>
+        <a href="#contact" class="btn btn-primary nav-cta-btn">
+          <span>Connect</span>
+          <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <button class="hamburger-btn" id="hamburgerBtn" aria-label="Toggle menu" aria-expanded="false"
+          aria-controls="mobileMenu">
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+          <span class="hamburger-bar"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div class="mobile-menu-drawer" id="mobileMenu">
+      <div class="mobile-menu-inner">
+        <div class="mobile-menu-header">
+          <div class="logo-text">
+            <span class="church-title">Mizpah Ministries</span>
+            <span class="church-subtitle">CHURCH</span>
+          </div>
+          <button class="mobile-close-btn" id="mobileCloseBtn" aria-label="Close menu">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <ul class="mobile-nav-list">
+          <li><a href="#home" class="mobile-nav-link">Home</a></li>
+          <li><a href="#pastor" class="mobile-nav-link">Our Pastor</a></li>
+          <li><a href="#sermons" class="mobile-nav-link">Sermons</a></li>
+          <li><a href="#gallery" class="mobile-nav-link">Photo Gallery</a></li>
+          <li><a href="#contact" class="mobile-nav-link">Contact</a></li>
+          <li><a href="login.html" class="mobile-nav-link" style="color: #1E5AA8; font-weight: 700;"><i class="fa-solid fa-lock"></i> Admin Portal</a></li>
+        </ul>
+        <div class="mobile-menu-footer">
+          <a href="#contact" class="btn btn-primary btn-block mobile-join-btn">
+            <i class="fa-solid fa-envelope"></i> Connect With Us
+          </a>
+          <div class="mobile-contact-snippet">
+            <p><i class="fa-solid fa-location-dot"></i> 742 Evergreen Terrace</p>
+            <p><i class="fa-solid fa-phone"></i> (800) 555-4321</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+  </header>
+
+  <main>
+    <!-- SECTION 2: Hero Section -->
+    <section class="hero-section" id="home">
+      <!-- Background Image with Clean Overlay -->
+      <div class="hero-bg-media">
+        <img src="images/hero-church.jpg"
+          alt="Historic church cathedral with majestic spire and fountain in Trafalgar Square" class="hero-bg-img"
+          loading="eager">
+        <div class="hero-overlay-gradient"></div>
+      </div>
+
+      <div class="container hero-content-wrapper">
+        <div class="hero-content">
+          <h1 class="hero-title">Safeguarding</h1>
+          <p class="hero-lead">
+            Safeguarding is of vital importance to the life and mission of the Church in the World.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: Next Steps / Discipleship Pathway -->
+    <section class="pathway-section" id="pathway">
+      <div class="container main-container mb-24">
+        <div class="pathway-grid">
+
+          <!-- Card 1: Know God -->
+          <div class="pathway-card reveal-on-scroll">
+            <div class="pathway-img-wrap">
+              <img src="images/know-god.jpg" alt="Two young men praying together in fellowship" class="pathway-img"
+                loading="lazy">
+            </div>
+            <div class="pathway-body">
+              <h3 class="pathway-title">KNOW GOD</h3>
+              <p class="pathway-desc">
+                Make a decision today to follow Jesus and begin a journey filled with hope and truth.
+              </p>
+              <a href="#pastor" class="pathway-link">
+                <span>Learn More</span>
+                <i class="fa-solid fa-caret-right"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 2: Grow in Community -->
+          <div class="pathway-card featured-card reveal-on-scroll">
+            <div class="pathway-img-wrap">
+              <img src="images/grow-community.jpg" alt="A smiling, diverse group of church community members together"
+                class="pathway-img" loading="lazy">
+            </div>
+            <div class="pathway-body">
+              <h3 class="pathway-title">GROW IN COMMUNITY</h3>
+              <p class="pathway-desc">
+                Experience meaningful relationships, make new friends, and deepen your faith. Find your community today!
+              </p>
+              <a href="#contact" class="pathway-link">
+                <span>Join a Group</span>
+                <i class="fa-solid fa-arrow-right-long"></i>
+              </a>
+            </div>
+          </div>
+
+          <!-- Card 3: Make a Difference -->
+          <div class="pathway-card reveal-on-scroll">
+            <div class="pathway-img-wrap">
+              <img src="images/make-difference.jpg" alt="Church volunteers smiling and serving food to the community"
+                class="pathway-img" loading="lazy">
+            </div>
+            <div class="pathway-body">
+              <h3 class="pathway-title">MAKE A DIFFERENCE</h3>
+              <p class="pathway-desc">
+                God created you with unique gifts to make a tangible difference in the world around you. Get involved!
+              </p>
+              <a href="#contact" class="pathway-link">
+                <span>Serve on a Team</span>
+                <i class="fa-solid fa-caret-right"></i>
+              </a>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: Pastor Section -->
+    <section class="pastor-section" id="pastor">
+      <div class="container main-container">
+        <div class="pastor-layout-grid reveal-on-scroll">
+          <!-- Left Column: Pastor Photo -->
+          <div class="pastor-img-col">
+            <img src="images/pastor.png" alt="Pastor" class="pastor-feature-img" loading="lazy">
+          </div>
+
+          <!-- Right Column: Pastor Info -->
+          <div class="pastor-info-col">
+            <span class="pastor-kicker">OUR PASTOR</span>
+            <h2 class="pastor-headline">Pastor Ezekiel.G</h2>
+            <blockquote class="pastor-quote">
+              “For every way that someone can be lost, we want to provide a practical way for them to be found in the
+              very place that they have ended up.” –Ezekiel.G
+            </blockquote>
+            <div class="pastor-cta-row">
+              <button class="btn-pastor-primary" id="openPastorModalBtn">
+                Learn about Ezekiel
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 9: Sermons Section -->
+    <section class="sermons-section section-padding bg-light-blue" id="sermons">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-tag center-tag">
+            <span class="tag-cross"><i class="fa-solid fa-cross"></i></span>
+            <span class="tag-title">GOD'S WORD</span>
+          </div>
+          <h2 class="section-heading">Recent Sermons</h2>
+          <p class="section-subtext">Feed your soul with life-giving messages rooted in God’s Word. Listen online or
+            watch the full video archive.</p>
+        </div>
+
+        <!-- Featured Sermon -->
+        <div class="featured-sermon-card reveal-on-scroll">
+          <div class="featured-sermon-media">
+            <img src="https://images.unsplash.com/photo-1510525009512-ad7fc3378317?auto=format&fit=crop&w=1200&q=80"
+              alt="Pastor delivering inspiring Sunday sermon" class="featured-sermon-thumb" loading="lazy">
+            <div class="sermon-media-overlay"></div>
+            <button class="sermon-play-btn" id="featuredPlayBtn" aria-label="Play featured sermon video"
+              data-video-title="Walking Through the Valley with Unshakeable Peace" data-speaker="Pastor David Anderson"
+              data-date="Sunday, October 18, 2026">
+              <i class="fa-solid fa-play"></i>
+            </button>
+            <span class="featured-series-pill">CURRENT SERIES: THE UNFAILING SHEPHERD</span>
+          </div>
+
+          <div class="featured-sermon-info">
+            <div class="sermon-badge-row">
+              <span class="badge-featured">FEATURED SERMON</span>
+              <span class="sermon-duration"><i class="fa-regular fa-clock"></i> 38 mins</span>
+            </div>
+
+            <h3 class="featured-sermon-title">Walking Through the Valley with Unshakeable Peace</h3>
+
+            <div class="sermon-author-meta">
+              <i class="fa-solid fa-user-tie"></i>
+              <span>Pastor David Anderson</span>
+              <span class="meta-separator">•</span>
+              <i class="fa-regular fa-calendar"></i>
+              <span>October 18, 2026</span>
+              <span class="meta-separator">•</span>
+              <i class="fa-solid fa-book-bookmark"></i>
+              <span>Psalm 23:1-6</span>
+            </div>
+
+            <p class="featured-sermon-excerpt">
+              When darkness clouds the horizon, how do we find enduring peace? In this message, Pastor David unpacks the
+              tender promises of Psalm 23, reminding us that Christ is not merely waiting at our journey’s end—He is
+              walking faithfully beside us in every shadow.
+            </p>
+
+            <div class="featured-sermon-actions">
+              <button class="btn btn-primary sermon-watch-trigger"
+                data-video-title="Walking Through the Valley with Unshakeable Peace"
+                data-speaker="Pastor David Anderson" data-date="Sunday, October 18, 2026">
+                <i class="fa-solid fa-play"></i>
+                <span>Watch Sermon</span>
+              </button>
+              <button class="btn btn-outline-navy sermon-listen-trigger"
+                data-audio-title="Walking Through the Valley with Unshakeable Peace">
+                <i class="fa-solid fa-headphones"></i>
+                <span>Listen Audio</span>
+              </button>
+              <a href="#contact" class="btn btn-ghost">
+                <i class="fa-solid fa-download"></i> Sermon Notes (PDF)
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Smaller Sermon Cards Grid -->
+        <div class="sermons-sub-grid">
+          <!-- Sub Sermon 1 -->
+          <div class="sub-sermon-card reveal-on-scroll">
+            <div class="sub-sermon-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1438232992991-995b7058bbb3?auto=format&fit=crop&w=600&q=80"
+                alt="Bible study sermon thumbnail" loading="lazy">
+              <button class="sub-play-btn sermon-watch-trigger" data-video-title="The Power of Steadfast Prayer"
+                data-speaker="Pastor David Anderson" data-date="October 11, 2026" aria-label="Play sermon">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+            <div class="sub-sermon-body">
+              <span class="sub-sermon-date">October 11, 2026 • Philippians 4:6-7</span>
+              <h4 class="sub-sermon-title">The Power of Steadfast Prayer</h4>
+              <p class="sub-sermon-author">Pastor David Anderson</p>
+              <div class="sub-sermon-link-wrap">
+                <button class="text-link-btn sermon-watch-trigger" data-video-title="The Power of Steadfast Prayer"
+                  data-speaker="Pastor David Anderson" data-date="October 11, 2026">
+                  <span>Watch Sermon</span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sub Sermon 2 -->
+          <div class="sub-sermon-card reveal-on-scroll">
+            <div class="sub-sermon-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1445445290350-18a3b86e0b5b?auto=format&fit=crop&w=600&q=80"
+                alt="Congregation sermon thumbnail" loading="lazy">
+              <button class="sub-play-btn sermon-watch-trigger" data-video-title="Rooted in Grace: Growing Together"
+                data-speaker="Associate Pastor Marcus Vance" data-date="October 4, 2026" aria-label="Play sermon">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+            <div class="sub-sermon-body">
+              <span class="sub-sermon-date">October 4, 2026 • Colossians 2:6-10</span>
+              <h4 class="sub-sermon-title">Rooted in Grace: Growing Together</h4>
+              <p class="sub-sermon-author">Pastor Marcus Vance</p>
+              <div class="sub-sermon-link-wrap">
+                <button class="text-link-btn sermon-watch-trigger" data-video-title="Rooted in Grace: Growing Together"
+                  data-speaker="Associate Pastor Marcus Vance" data-date="October 4, 2026">
+                  <span>Watch Sermon</span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Sub Sermon 3 -->
+          <div class="sub-sermon-card reveal-on-scroll">
+            <div class="sub-sermon-thumb-wrap">
+              <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=600&q=80"
+                alt="Open bible thumbnail" loading="lazy">
+              <button class="sub-play-btn sermon-watch-trigger" data-video-title="Living as Children of Light"
+                data-speaker="Pastor David Anderson" data-date="September 27, 2026" aria-label="Play sermon">
+                <i class="fa-solid fa-play"></i>
+              </button>
+            </div>
+            <div class="sub-sermon-body">
+              <span class="sub-sermon-date">September 27, 2026 • Ephesians 5:8-14</span>
+              <h4 class="sub-sermon-title">Living as Children of Light</h4>
+              <p class="sub-sermon-author">Pastor David Anderson</p>
+              <div class="sub-sermon-link-wrap">
+                <button class="text-link-btn sermon-watch-trigger" data-video-title="Living as Children of Light"
+                  data-speaker="Pastor David Anderson" data-date="September 27, 2026">
+                  <span>Watch Sermon</span>
+                  <i class="fa-solid fa-chevron-right"></i>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 10: Gallery -->
+    <section class="gallery-section section-padding" id="gallery">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <h2 class="section-heading">Church Life Gallery</h2>
+          <p class="section-subtext">A glimpse into our community worshiping, praying, serving, and living in Christ's
+            love together.</p>
+        </div>
+
+        <!-- Gallery Filters -->
+        <div class="gallery-filter-bar reveal-on-scroll">
+          <button class="filter-btn active" data-filter="all">All Photos</button>
+          <button class="filter-btn" data-filter="worship">Worship</button>
+          <button class="filter-btn" data-filter="community">Community</button>
+          <button class="filter-btn" data-filter="prayer">Prayer</button>
+          <button class="filter-btn" data-filter="youth">Youth</button>
+          <button class="filter-btn" data-filter="building">Sanctuary</button>
+        </div>
+
+        <!-- Gallery Grid -->
+        <div class="gallery-grid">
+          <!-- Item 1: Worship -->
+          <div class="gallery-item reveal-on-scroll" data-category="worship">
+            <div class="gallery-thumb-box">
+              <img src="https://images.unsplash.com/photo-1465847899084-d164df4dedc6?auto=format&fit=crop&w=800&q=80"
+                alt="Worship choir singing with raised hands" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-cat-pill">Worship</span>
+                <h4 class="gallery-item-title">Congregational Praise</h4>
+                <button class="gallery-zoom-btn" aria-label="View photo in lightbox"><i
+                    class="fa-solid fa-magnifying-glass-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2: Community -->
+          <div class="gallery-item reveal-on-scroll" data-category="community">
+            <div class="gallery-thumb-box">
+              <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?auto=format&fit=crop&w=800&q=80"
+                alt="Church members laughing together in community" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-cat-pill">Community</span>
+                <h4 class="gallery-item-title">Warm Fellowship</h4>
+                <button class="gallery-zoom-btn" aria-label="View photo in lightbox"><i
+                    class="fa-solid fa-magnifying-glass-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3: Prayer -->
+          <div class="gallery-item reveal-on-scroll" data-category="prayer">
+            <div class="gallery-thumb-box">
+              <img src="https://images.unsplash.com/photo-1507692049790-de58290a4334?auto=format&fit=crop&w=800&q=80"
+                alt="Quiet prayer and bible devotion" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-cat-pill">Prayer</span>
+                <h4 class="gallery-item-title">Moments of Intercession</h4>
+                <button class="gallery-zoom-btn" aria-label="View photo in lightbox"><i
+                    class="fa-solid fa-magnifying-glass-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 4: Youth -->
+          <div class="gallery-item reveal-on-scroll" data-category="youth">
+            <div class="gallery-thumb-box">
+              <img src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?auto=format&fit=crop&w=800&q=80"
+                alt="Youth gathering and smiling together" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-cat-pill">Youth</span>
+                <h4 class="gallery-item-title">Youth Night Connection</h4>
+                <button class="gallery-zoom-btn" aria-label="View photo in lightbox"><i
+                    class="fa-solid fa-magnifying-glass-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 5: Building / Sanctuary -->
+          <div class="gallery-item reveal-on-scroll" data-category="building">
+            <div class="gallery-thumb-box">
+              <img src="https://images.unsplash.com/photo-1548625361-16eb72d5b610?auto=format&fit=crop&w=800&q=80"
+                alt="Peaceful sanctuary architecture with morning light" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-cat-pill">Sanctuary</span>
+                <h4 class="gallery-item-title">Sunlit Sanctuary</h4>
+                <button class="gallery-zoom-btn" aria-label="View photo in lightbox"><i
+                    class="fa-solid fa-magnifying-glass-plus"></i></button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 6: Events / Community -->
+          <div class="gallery-item reveal-on-scroll" data-category="community">
+            <div class="gallery-thumb-box">
+              <img src="https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?auto=format&fit=crop&w=800&q=80"
+                alt="Outdoor community service and food drive" loading="lazy">
+              <div class="gallery-item-overlay">
+                <span class="gallery-cat-pill">Community</span>
+                <h4 class="gallery-item-title">Outreach Service Day</h4>
+                <button class="gallery-zoom-btn" aria-label="View photo in lightbox"><i
+                    class="fa-solid fa-magnifying-glass-plus"></i></button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 11: Testimonial / Community Section -->
+    <section class="testimonials-section section-padding bg-light-blue" id="testimonials">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-tag center-tag">
+            <span class="tag-cross"><i class="fa-solid fa-cross"></i></span>
+            <span class="tag-title">TESTIMONIES</span>
+          </div>
+          <h2 class="section-heading">Stories of Faith</h2>
+          <p class="section-subtext">Hear how God’s grace is working within the lives and families of our congregation.
+          </p>
+        </div>
+
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <div class="testimonial-card reveal-on-scroll">
+            <div class="testimonial-quote-icon">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              “When our family moved to town three years ago, we were feeling isolated and searching for a genuine
+              spiritual home. From the moment we walked through Grace Haven’s doors, people greeted us by name and
+              welcomed our children with open arms. Our faith has blossomed in ways we never imagined.”
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=150&q=80"
+                alt="Sarah Jenkins" class="testimonial-avatar" loading="lazy">
+              <div class="testimonial-meta">
+                <h4 class="author-name">Sarah Jenkins</h4>
+                <span class="author-sub">Member for 3 Years</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 2 -->
+          <div class="testimonial-card featured-testimonial reveal-on-scroll">
+            <div class="testimonial-quote-icon">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              “I had walked away from church for over fifteen years. I thought God was done with me. Pastor David’s
+              sermon on the prodigal son brought me to tears. Grace Haven showed me that God’s love doesn’t give up. The
+              Men’s Ministry helped me become a better husband, father, and disciple.”
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=150&q=80"
+                alt="Michael Torres" class="testimonial-avatar" loading="lazy">
+              <div class="testimonial-meta">
+                <h4 class="author-name">Michael Torres</h4>
+                <span class="author-sub">Men’s Ministry Leader</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Testimonial 3 -->
+          <div class="testimonial-card reveal-on-scroll">
+            <div class="testimonial-quote-icon">
+              <i class="fa-solid fa-quote-left"></i>
+            </div>
+            <p class="testimonial-text">
+              “Grace Haven Youth taught me what it truly means to follow Jesus in high school. I made lifelong friends
+              who hold me accountable, pray for me through stressful exams, and inspire me to serve in the local soup
+              kitchen every month. I thank God every day for this church.”
+            </p>
+            <div class="testimonial-author">
+              <img src="https://images.unsplash.com/photo-1517841905240-472988babdf9?auto=format&fit=crop&w=150&q=80"
+                alt="Hannah Williams" class="testimonial-avatar" loading="lazy">
+              <div class="testimonial-meta">
+                <h4 class="author-name">Hannah Williams</h4>
+                <span class="author-sub">Youth &amp; Worship Team</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 13: Contact Section -->
+    <section class="contact-section section-padding" id="contact">
+      <div class="container">
+        <div class="section-header text-center reveal-on-scroll">
+          <div class="section-tag center-tag">
+            <span class="tag-cross"><i class="fa-solid fa-cross"></i></span>
+            <span class="tag-title">GET IN TOUCH</span>
+          </div>
+          <h2 class="section-heading">We’d Love to Hear From You</h2>
+          <p class="section-subtext">Have questions, prayer requests, or planning your first Sunday visit? Reach out and
+            our team will gladly connect with you.</p>
+        </div>
+
+        <div class="contact-grid">
+          <!-- Left Column: Contact Information & Hours & Map Placeholder -->
+          <div class="contact-info-col reveal-on-scroll">
+            <div class="info-card-header">
+              <h3>Church Information</h3>
+              <p>Our ministry office is open Tuesday through Friday, 9:00 AM to 4:00 PM.</p>
+            </div>
+
+            <div class="info-items-stack">
+              <!-- Item 1: Address -->
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-location-dot"></i></div>
+                <div class="info-detail">
+                  <span class="info-label">Address</span>
+                  <p class="info-val">742 Evergreen Terrace<br>Springfield, IL 62704</p>
+                </div>
+              </div>
+
+              <!-- Item 2: Phone -->
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-phone"></i></div>
+                <div class="info-detail">
+                  <span class="info-label">Phone Number</span>
+                  <p class="info-val"><a href="tel:+18005554321">(800) 555-4321</a></p>
+                </div>
+              </div>
+
+              <!-- Item 3: Email -->
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-envelope"></i></div>
+                <div class="info-detail">
+                  <span class="info-label">Email Address</span>
+                  <p class="info-val"><a href="mailto:hello@gracehavenchurch.org">hello@gracehavenchurch.org</a></p>
+                </div>
+              </div>
+
+              <!-- Item 4: Service Times -->
+              <div class="info-item">
+                <div class="info-icon"><i class="fa-solid fa-church"></i></div>
+                <div class="info-detail">
+                  <span class="info-label">Service Times</span>
+                  <p class="info-val">
+                    <strong>Sunday:</strong> 9:00 AM &amp; 11:00 AM<br>
+                    <strong>Wednesday:</strong> 7:00 PM Bible Study
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <!-- Google Maps Placeholder Container -->
+            <div class="map-container-box">
+              <div class="map-header">
+                <span><i class="fa-solid fa-map-pin"></i> Sanctuary Location</span>
+                <a href="https://maps.google.com" target="_blank" rel="noopener noreferrer" class="map-directions-link">
+                  <span>Get Directions</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                </a>
+              </div>
+              <div class="map-visual-placeholder">
+                <iframe title="Church Location Map"
+                  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d193595.15830869428!2d-74.119763973046!3d40.697663719178224!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c24fa5d33f083b%3A0xc80b8f06e177fe62!2sNew%20York%2C%20NY!5e0!3m2!1sen!2sus!4v1697000000000!5m2!1sen!2sus"
+                  width="100%" height="220" style="border:0;" allowfullscreen="" loading="lazy"
+                  referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right Column: Interactive Contact Form -->
+          <div class="contact-form-col reveal-on-scroll">
+            <div class="contact-form-card">
+              <div class="form-title-group">
+                <h3>Send Us a Message</h3>
+                <p>Fill out the form below and a pastoral team member will reply within 24 hours.</p>
+              </div>
+
+              <form id="churchContactForm" novalidate>
+                <!-- Name -->
+                <div class="form-group">
+                  <label for="contactName" class="form-label">Full Name <span class="required">*</span></label>
+                  <div class="input-with-icon">
+                    <i class="fa-regular fa-user input-icon"></i>
+                    <input type="text" id="contactName" name="name" class="form-control" placeholder="Johnathan Doe"
+                      required>
+                  </div>
+                  <span class="field-error-msg" id="nameError">Please enter your full name.</span>
+                </div>
+
+                <!-- Email & Phone in 2 Columns -->
+                <div class="form-row-2">
+                  <div class="form-group">
+                    <label for="contactEmail" class="form-label">Email Address <span class="required">*</span></label>
+                    <div class="input-with-icon">
+                      <i class="fa-regular fa-envelope input-icon"></i>
+                      <input type="email" id="contactEmail" name="email" class="form-control"
+                        placeholder="john@example.com" required>
+                    </div>
+                    <span class="field-error-msg" id="emailError">Please enter a valid email address.</span>
+                  </div>
+
+                  <div class="form-group">
+                    <label for="contactPhone" class="form-label">Phone Number</label>
+                    <div class="input-with-icon">
+                      <i class="fa-solid fa-phone input-icon"></i>
+                      <input type="tel" id="contactPhone" name="phone" class="form-control"
+                        placeholder="(555) 000-0000">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Subject / Topic Dropdown -->
+                <div class="form-group">
+                  <label for="contactTopic" class="form-label">How Can We Help You?</label>
+                  <select id="contactTopic" name="topic" class="form-control select-control">
+                    <option value="first-visit">Planning My First Visit</option>
+                    <option value="prayer-request">Prayer Request</option>
+                    <option value="ministry-inquiry">Joining a Ministry / Volunteering</option>
+                    <option value="pastor-meeting">Meet with Pastor</option>
+                    <option value="other">General Question</option>
+                  </select>
+                </div>
+
+                <!-- Message -->
+                <div class="form-group">
+                  <label for="contactMessage" class="form-label">Message <span class="required">*</span></label>
+                  <textarea id="contactMessage" name="message" rows="5" class="form-control"
+                    placeholder="How can our church family pray for you or assist your journey?" required></textarea>
+                  <span class="field-error-msg" id="messageError">Please share your message or prayer request.</span>
+                </div>
+
+                <!-- Submit Button -->
+                <button type="submit" class="btn btn-primary btn-block submit-btn" id="contactSubmitBtn">
+                  <span class="btn-text">Send Message</span>
+                  <i class="fa-solid fa-paper-plane"></i>
+                </button>
+              </form>
+
+              <!-- Feedback / Success Message Box -->
+              <div class="form-feedback-card hidden" id="formSuccessCard">
+                <div class="success-icon-wrap">
+                  <i class="fa-solid fa-circle-check"></i>
+                </div>
+                <h4>Message Received in Grace</h4>
+                <p>Thank you for reaching out! Our ministry staff has received your message and will respond promptly.
+                  May God bless and keep you today.</p>
+                <button class="btn btn-outline-navy btn-sm" id="sendAnotherBtn">Send Another Message</button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- SECTION 14: Footer -->
+  <footer class="site-footer">
+    <div class="footer-top-accent"></div>
+    <div class="container footer-container">
+      <div class="footer-grid">
+
+        <!-- Col 1: Brand & Mission -->
+        <div class="footer-col footer-col-brand">
+          <div class="footer-logo">
+            <svg viewBox="0 0 36 36" class="footer-cross-svg" aria-hidden="true">
+              <circle cx="18" cy="18" r="16" fill="rgba(255,255,255,0.08)" stroke="#EAF4FF" stroke-width="1.2" />
+              <path d="M17 7h2v8h7v2h-7v12h-2V17h-7v-2h7V7z" fill="#FFFFFF" />
+            </svg>
+            <div class="footer-brand-text">
+              <span class="f-title">Mizpah Ministries</span>
+              <span class="f-sub">CHURCH</span>
+            </div>
+          </div>
+          <p class="footer-about-text">
+            A compassionate, Christ-centered family of faith dedicated to preaching the Gospel of grace, walking
+            together in heartfelt community, and extending God's love to our local neighbors and across the world.
+          </p>
+          <div class="footer-social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Grace Haven on Facebook" class="social-link"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://youtube.com" target="_blank" rel="noopener noreferrer" aria-label="Grace Haven on YouTube"
+              class="social-link"><i class="fa-brands fa-youtube"></i></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Grace Haven on Instagram" class="social-link"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://spotify.com" target="_blank" rel="noopener noreferrer"
+              aria-label="Grace Haven on Spotify Podcasts" class="social-link"><i class="fa-brands fa-spotify"></i></a>
+          </div>
+        </div>
+
+        <!-- Col 2: Quick Links -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Quick Links</h4>
+          <ul class="footer-links-list">
+            <li><a href="#home"><i class="fa-solid fa-angle-right"></i> Home</a></li>
+            <li><a href="#pastor"><i class="fa-solid fa-angle-right"></i> Our Pastor</a></li>
+            <li><a href="#sermons"><i class="fa-solid fa-angle-right"></i> Sermon Archive</a></li>
+            <li><a href="#gallery"><i class="fa-solid fa-angle-right"></i> Photo Gallery</a></li>
+            <li><a href="login.html"><i class="fa-solid fa-lock"></i> Admin Portal</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Ministries -->
+        <div class="footer-col">
+          <h4 class="footer-heading">Ministries</h4>
+          <ul class="footer-links-list">
+            <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Children's Ministry</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Youth &amp; Students</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Worship &amp; Creative Arts</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Women’s Fellowship</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Men of Grace</a></li>
+            <li><a href="#contact"><i class="fa-solid fa-angle-right"></i> Community Outreach</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Contact & Service Times -->
+        <div class="footer-col footer-col-contact">
+          <h4 class="footer-heading">Contact &amp; Times</h4>
+          <div class="footer-contact-stack">
+            <div class="f-contact-item">
+              <i class="fa-solid fa-location-dot"></i>
+              <span>742 Evergreen Terrace<br>Springfield, IL 62704</span>
+            </div>
+            <div class="f-contact-item">
+              <i class="fa-solid fa-phone"></i>
+              <a href="tel:+18005554321">(800) 555-4321</a>
+            </div>
+            <div class="f-contact-item">
+              <i class="fa-solid fa-envelope"></i>
+              <a href="mailto:hello@gracehavenchurch.org">hello@gracehavenchurch.org</a>
+            </div>
+            <div class="f-contact-item f-service-hours">
+              <i class="fa-regular fa-clock"></i>
+              <span><strong>Sundays:</strong> 9:00 AM &amp; 11:00 AM<br><strong>Wednesdays:</strong> 7:00 PM</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Footer Bottom Bar -->
+      <div class="footer-bottom-bar">
+        <p class="copyright-text">
+          &copy; 2026 MIZPAH MINISTRIES. All Rights Reserved.
+        </p>
+        <div class="footer-legal-links">
+          <a href="#home">Privacy Policy</a>
+          <span class="dot-sep">•</span>
+          <a href="#home">Terms of Grace</a>
+          <span class="dot-sep">•</span>
+          <a href="#home">Online Giving</a>
+          <span class="dot-sep">•</span>
+          <a href="login.html" style="color: var(--gold, #D4AF37);"><i class="fa-solid fa-lock"></i> Staff Login</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALS & LIGHTBOXES ==================== -->
+
+  <!-- Modal 1: Plan Your Visit Dialog -->
+  <div class="modal-backdrop" id="visitModal" role="dialog" aria-modal="true" aria-labelledby="visitModalTitle" hidden>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="modal-badge"><i class="fa-solid fa-church"></i> FIRST-TIME GUEST GUIDE</span>
+            <h3 id="visitModalTitle" class="modal-title">Plan Your Visit to Grace Haven</h3>
+          </div>
+          <button class="modal-close-btn" data-close-modal="visitModal" aria-label="Close dialog">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <p class="modal-intro">We can't wait to meet you! Here is what you can look forward to during your Sunday
+            visit:</p>
+
+          <div class="visit-guide-steps">
+            <div class="guide-step">
+              <div class="step-num">1</div>
+              <div class="step-content">
+                <h4>Reserved Guest Parking</h4>
+                <p>Follow our signs to the front lot where spaces are specially reserved for first-time visitors. Our
+                  parking attendants are happy to assist.</p>
+              </div>
+            </div>
+
+            <div class="guide-step">
+              <div class="step-num">2</div>
+              <div class="step-content">
+                <h4>Warm Welcome &amp; Refreshments</h4>
+                <p>Stop by the Welcome Lounge in the main foyer for complimentary coffee, tea, and warm pastries before
+                  the service begins.</p>
+              </div>
+            </div>
+
+            <div class="guide-step">
+              <div class="step-num">3</div>
+              <div class="step-content">
+                <h4>Safe &amp; Engaging Kids Programs</h4>
+                <p>Children aged 0–11 can check in safely at our Grace Kids center where caring, background-checked
+                  teachers will guide their lesson.</p>
+              </div>
+            </div>
+
+            <div class="guide-step">
+              <div class="step-num">4</div>
+              <div class="step-content">
+                <h4>Come as You Are</h4>
+                <p>Dress comfortably. From jeans and t-shirts to Sunday best, everyone is embraced just as they are.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="visit-modal-cta">
+            <a href="#contact" class="btn btn-primary btn-block" data-close-modal="visitModal">
+              <span>Let Us Know You're Coming (RSVP)</span>
+              <i class="fa-solid fa-paper-plane"></i>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Pastor Story Modal -->
+  <div class="modal-backdrop" id="pastorModal" role="dialog" aria-modal="true" aria-labelledby="pastorModalTitle"
+    hidden>
+    <div class="modal-dialog modal-dialog-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="modal-badge"><i class="fa-solid fa-user-tie"></i> BIOGRAPHY</span>
+            <h3 id="pastorModalTitle" class="modal-title">The Journey &amp; Heart of Pastor Ezekiel</h3>
+          </div>
+          <button class="modal-close-btn" data-close-modal="pastorModal" aria-label="Close dialog">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body pastor-modal-body">
+          <div class="pastor-modal-grid">
+            <div class="pastor-modal-photo">
+              <img src="images/pastor.png" alt="Pastor" class="modal-pastor-img">
+              <div class="pastor-quote-highlight">
+                <p>“For every way that someone can be lost, we want to provide a practical way for them to be found in
+                  the very place that they have ended up.”
+                </p>
+              </div>
+            </div>
+            <div class="pastor-modal-text">
+              <h4>A Calling of Faith &amp; Purpose</h4>
+              <p>Ezekiel.G is the Senior Pastor of Rock Church. A former NFL defensive back for the San Diego Chargers,
+                Ezekiel experienced a life-changing encounter with Jesus Christ that led him into youth ministry and
+                pastoral leadership.</p>
+
+              <h4>Vision &amp; Ministry</h4>
+              <p>Under Pastor Ezekiel’s leadership, the church focuses on equipping believers to Know God, Grow in
+                Community, and Make a Difference through local outreach and global impact.</p>
+
+              <div class="pastor-contact-prompt">
+                <a href="#contact" class="btn btn-primary" data-close-modal="pastorModal">
+                  <i class="fa-regular fa-calendar"></i> Connect with Our Team
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Sermon Video / Audio Player Modal -->
+  <div class="modal-backdrop" id="sermonModal" role="dialog" aria-modal="true" aria-labelledby="sermonModalTitle"
+    hidden>
+    <div class="modal-dialog modal-dialog-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-wrap">
+            <span class="modal-badge"><i class="fa-solid fa-video"></i> SERMON PLAYER</span>
+            <h3 id="sermonModalTitle" class="modal-title">Walking Through the Valley with Unshakeable Peace</h3>
+          </div>
+          <button class="modal-close-btn" data-close-modal="sermonModal" aria-label="Close dialog">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="modal-body player-modal-body">
+          <!-- Video Simulation Player -->
+          <div class="video-player-frame">
+            <div class="video-mock-screen">
+              <img src="https://images.unsplash.com/photo-1510525009512-ad7fc3378317?auto=format&fit=crop&w=1200&q=80"
+                alt="Sermon backdrop" class="video-stream-img">
+              <div class="video-live-overlay">
+                <div class="live-dot-wrap">
+                  <span class="live-red-dot"></span>
+                  <span>HD SERMON BROADCAST</span>
+                </div>
+                <div class="video-controls-bar">
+                  <button class="ctrl-btn play-pause-toggle" aria-label="Play or pause sermon"><i
+                      class="fa-solid fa-pause"></i></button>
+                  <div class="video-progress-track">
+                    <div class="video-progress-fill" style="width: 42%;"></div>
+                  </div>
+                  <span class="ctrl-time">16:15 / 38:40</span>
+                  <button class="ctrl-btn" aria-label="Volume"><i class="fa-solid fa-volume-high"></i></button>
+                  <button class="ctrl-btn" aria-label="Fullscreen"><i class="fa-solid fa-expand"></i></button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="player-sermon-meta">
+            <div class="meta-row">
+              <span id="playerSpeaker"><i class="fa-solid fa-user-tie"></i> Pastor David Anderson</span>
+              <span id="playerDate"><i class="fa-regular fa-calendar"></i> Sunday Service</span>
+            </div>
+            <p class="player-note">
+              Thank you for worshiping with us. If this message blessed your spirit, feel free to share it with someone
+              who needs God's reassurance today.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: Gallery Lightbox -->
+  <div class="lightbox-backdrop" id="galleryLightbox" role="dialog" aria-modal="true" aria-label="Image preview" hidden>
+    <div class="lightbox-content">
+      <button class="lightbox-close" id="lightboxCloseBtn" aria-label="Close lightbox"><i
+          class="fa-solid fa-xmark"></i></button>
+      <button class="lightbox-nav prev" id="lightboxPrevBtn" aria-label="Previous photo"><i
+          class="fa-solid fa-chevron-left"></i></button>
+      <button class="lightbox-nav next" id="lightboxNextBtn" aria-label="Next photo"><i
+          class="fa-solid fa-chevron-right"></i></button>
+
+      <div class="lightbox-image-wrapper">
+        <img src="" alt="" id="lightboxImg" class="lightbox-img">
+      </div>
+
+      <div class="lightbox-caption" id="lightboxCaption">
+        <span class="caption-cat">Worship</span>
+        <h4 class="caption-title">Congregational Praise</h4>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container for Form Submissions -->
+  <div class="toast-notification" id="toastNotice" role="status" aria-live="polite">
+    <div class="toast-icon"><i class="fa-solid fa-circle-check"></i></div>
+    <div class="toast-body">
+      <h5 class="toast-title">Message Sent</h5>
+      <p class="toast-desc">May God bless you. We will be in touch shortly.</p>
+    </div>
+  </div>
+
+  <!-- Supabase JS Client & API -->
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+  <script src="supabase-client.js"></script>
+
+  <!-- JavaScript -->
+  <script src="script.js"></script>
+</body>
+
+</html>
